@@ -15,7 +15,7 @@ are exactly the thing this workflow exists to replace. Report or nothing.
 ## Step 0: Check the tools
 
 Look for the Tracetify MCP tools: `search_reports`, `read_report`,
-`start_trace`, `get_trace` (clients may prefix them, e.g.
+`start_trace`, `get_trace`, `unlock_report` (clients may prefix them, e.g.
 `mcp__tracetify__search_reports`).
 
 **If they are missing, print this setup guide and stop:**
@@ -76,9 +76,17 @@ After `start_trace`:
   appears when part of the timeline is locked; `report.analysis` is `null`
   while `analysisReady` is true when the verdict is locked.
 
-When content is locked, report exactly what unlocking adds — the counts and
-the cost are right there in the response. Never invent what sits behind a
-paywall.
+When content is locked, you can complete the unlock without leaving the
+conversation: quote the exact numbers from the response ("29 more timeline
+events, 61 more evidence items, N credits — permanent, never charged twice"),
+and on the user's explicit yes call `unlock_report` with the slug — it
+returns the full report. If they decline, use `unlockUrl` from the response
+to hand them the web page instead, and work with the visible slice. Never
+invent what sits behind a paywall.
+
+The verdict stays on the website and you do not need it: the whole point of
+Step 4 is that **you are the analyst** — the unlocked data is your raw
+material.
 
 ## Step 4: Translate the timeline into a playbook
 

@@ -67,7 +67,9 @@ After `start_trace`:
 - `report.timeline[]` — `{date, kind, title, count, sources}`: the visible
   growth events, in order.
 - `report.evidence[]` — `{date, kind, title, url, quote, rank}`: the source
-  links; `report.grouped` is the same list bucketed by kind.
+  links; `report.grouped` is the same list bucketed by kind. Individual
+  items can miss fields (about a third lack `date` or `url` in practice) —
+  cite only items that carry a `url`.
 - `report.results[]` — per-source status for the 12 sources. Some sources
   fail or degrade; the report says so. Relay those gaps honestly.
 - **Paywall fields:** `report.timelineLocked` (`{count, cost, teaser}`)

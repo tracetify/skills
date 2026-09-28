@@ -1,0 +1,4 @@
+interface:
+  display_name: "Competitor Research"
+  short_description: "Trace competitor growth with evidence and useful tests."
+  default_prompt: "Use $competitor-research to investigate this competitor and propose evidence-backed growth experiments."

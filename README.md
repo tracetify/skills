@@ -1,36 +1,53 @@
 # Tracetify Skills
 
-Skills that answer **what winners actually did** — powered by
-[Tracetify](https://tracetify.com)'s growth-trace data.
+Free workflows from [Tracetify](https://tracetify.com) for coding agents: investigate competitors with evidence, and decide which pages to improve using your own Search Console data.
 
-Most competitive analysis tells you where a product stands today. These
-skills work from its reconstructed history instead: the first mention, the
-quiet weeks, the directory wave, the launch spike — twelve sources per trace,
-every claim dated and linked to the page it came from.
+| Skill | Result | Required input |
+|---|---|---|
+| [competitor-research](skills/competitor-research/SKILL.md) | Cited product/growth brief and a few testable actions | A domain plus host browsing, or supplied materials |
+| [gsc-seo-optimizer](skills/gsc-seo-optimizer/SKILL.md) | Search trend diagnosis, prioritized changes and justified skips | GSC CSV/ZIP exports, existing Google API access, or a suitable connector |
+
+No Tracetify account is required. Your agent/model costs remain those of your host. Optional Tracetify MCP access requires authentication; some deeper research tools consume credits, with explicit authorization. The skill packages contain no telemetry or automatic account setup.
 
 ## Install
 
+```bash
+npx skills add tracetify/skills --skill competitor-research
+npx skills add tracetify/skills --skill gsc-seo-optimizer
 ```
-npx skills add tracetify/skills
-```
 
-Or copy a skill folder from `skills/` into `~/.claude/skills/` (Claude Code)
-or your agent's skills directory.
+The [skills CLI](https://github.com/vercel-labs/skills) lets you choose the target agent. Add `--agent codex` or `--agent claude-code` to select one explicitly. Run `npx skills add tracetify/skills --list` to browse the collection.
 
-Live data comes through the [`tracetify-mcp`](https://github.com/tracetify/tracetify-mcp)
-server — each skill guides you through the one-line setup if it isn't
-connected yet. Reading the public report library is free; fresh traces draw
-from your Tracetify credit balance.
+For a local checkout or downloaded bundle, replace `tracetify/skills` with its directory path. To install manually, copy only the selected skill directory, including its references/scripts, into your agent's documented skills location.
 
-## Skills
+## Optional MCP connection
 
-| Skill | What it does |
-| --- | --- |
-| [`competitor-teardown`](skills/competitor-teardown/SKILL.md) | Turn a competitor's real growth timeline into a dated, source-linked playbook — and apply it to your own project |
+These two skills work without a Tracetify account. The [Tracetify MCP server](https://github.com/tracetify/tracetify-mcp) can add existing growth reports, deeper research data, and connected Search Console access. Free MCP reads still require authentication; paid research needs explicit authorization. See the [connection guide](https://tracetify.com/mcp).
 
-More are on the way; the bar for inclusion is that a skill's core step
-cannot be answered without trace data.
+The existing [`competitor-teardown`](https://github.com/tracetify/skills/tree/main/skills/competitor-teardown) remains available for users who specifically want the older Tracetify-report workflow. It requires MCP. Start with `competitor-research` for the free public-web or supplied-materials workflow; you do not need both for the same task.
+
+## Try a real task
+
+**Competitor research**
+
+> Use competitor-research to investigate how this competitor found early users. I run a new B2B SaaS with a $100/month experiment budget. Separate observed evidence from hypotheses and suggest up to three things I can test.
+
+**Search Console**
+
+> Use gsc-seo-optimizer on these two GSC exports. Our target market is Germany. Explain what changed, check whether branded searches are distorting the page metrics, and recommend the smallest worthwhile optimization batch. Do not edit the site yet.
+
+See [the offline example](examples/competitor-offline.md) and [the GSC example](examples/gsc-review.md). All example company data is synthetic. Real private exports are not included.
+
+## Development and release
+
+Run `python3 -m unittest discover -s tests -v` from the directory containing this README in the source checkout. The GSC CSV importer has no third-party dependencies; the optional API fetcher documents its dependencies separately.
+
+Run `python3 scripts/package_release.py` to generate an allowlisted ZIP in `dist/`. It contains the two new skill packages, README, LICENSE and examples. Development scripts/tests and the legacy skill remain in the GitHub source checkout; the ZIP excludes private settings, credentials and validation reports.
+
+Keep personal account/market preferences outside this release tree. Changes to the published core should originate here and be synchronized to personal installations after verification.
+
+GitHub publication and third-party directory indexing are separate. Installation and format checks do not prove ranking improvements or production conversion.
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).

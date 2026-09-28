@@ -1,0 +1,4 @@
+interface:
+  display_name: "GSC SEO Optimizer"
+  short_description: "Find worthwhile SEO changes in your Search Console data."
+  default_prompt: "Use $gsc-seo-optimizer to analyze my Search Console data and recommend which pages to improve or leave alone."

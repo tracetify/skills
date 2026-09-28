@@ -1,0 +1,18 @@
+name: Validate skills
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test data handling and release boundaries
+        run: python3 -m unittest discover -s tests -v
+      - name: Build public bundle
+        run: python3 scripts/package_release.py

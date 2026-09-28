@@ -9,6 +9,8 @@ Free workflows from [Tracetify](https://tracetify.com) for coding agents: invest
 
 No Tracetify account is required. Your agent/model costs remain those of your host. Optional Tracetify MCP access requires authentication; some deeper research tools consume credits, with explicit authorization. The skill packages contain no telemetry or automatic account setup.
 
+Browse the [skills page and worked examples](https://tracetify.com/skills?utm_source=github&utm_medium=referral&utm_campaign=agent_skills&utm_content=skills_readme) for a quick start.
+
 ## Install
 
 ```bash
@@ -36,7 +38,7 @@ The existing [`competitor-teardown`](https://github.com/tracetify/skills/tree/ma
 
 > Use gsc-seo-optimizer on these two GSC exports. Our target market is Germany. Explain what changed, check whether branded searches are distorting the page metrics, and recommend the smallest worthwhile optimization batch. Do not edit the site yet.
 
-See [the offline example](examples/competitor-offline.md) and [the GSC example](examples/gsc-review.md). All example company data is synthetic. Real private exports are not included.
+See the [UIZZE public-source research brief](examples/uizze-growth-research.md) for a real product example with citations and explicit evidence gaps. The [offline competitor example](examples/competitor-offline.md) and [GSC example](examples/gsc-review.md) use synthetic data. Real private exports are not included.
 
 ## Development and release
 

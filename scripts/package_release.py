@@ -22,6 +22,7 @@ FILES = [
     "gsc-seo-optimizer/scripts/import_gsc.py",
     "gsc-seo-optimizer/scripts/requirements-api.txt",
     "examples/competitor-offline.md", "examples/gsc-review.md",
+    "examples/uizze-growth-research.md",
     "examples/gsc-current/Pages.csv", "examples/gsc-current/Queries.csv",
     "examples/gsc-current/Filters.csv",
 ]

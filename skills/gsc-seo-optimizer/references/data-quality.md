@@ -36,6 +36,6 @@ Changes in page/query/market mix can move average rank independently of existing
 
 Use URL Inspection for Google-selected canonical, last crawl, fetch state, robots and indexing verdict. Current live HTML and Google's last crawl may differ. A sitemap API `indexed=0` field is not a full-site deindexing diagnosis. Exact Page indexing UI buckets require UI evidence; a URL sample cannot establish a sitewide rate.
 
-Before interpreting an SEO edit, check deployment date, Google's recrawl if relevant, complete post-change days, seasonal patterns, and other releases. Provide a review date, not a promised ranking lift. Low volume may justify waiting or fixing a confirmed technical issue, not fabricating an opportunity batch.
+Before interpreting an SEO edit, check deployment date, Google's recrawl if relevant, complete post-change days, seasonal patterns, and other releases. Provide a review date, not a promised ranking lift. Anchor a post-change review window to the actual deployment date, not the historical baseline endpoint. For proposed edits, make the review date conditional on deployment; count complete post-change evidence days only through the latest finalized data date, not through today. Low volume may justify waiting or fixing a confirmed technical issue, not fabricating an opportunity batch.
 
 API reference: https://developers.google.com/webmaster-tools/v1/searchanalytics/query

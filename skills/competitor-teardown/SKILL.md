@@ -15,14 +15,16 @@ are exactly the thing this workflow exists to replace. Report or nothing.
 ## Step 0: Check the tools
 
 Look for the Tracetify MCP tools: `search_reports`, `read_report`,
-`start_trace`, `get_trace`, `unlock_report` (clients may prefix them, e.g.
-`mcp__tracetify__search_reports`).
+`start_trace`, `get_trace`, `unlock_report`, `research_competitor_ads`
+(clients may prefix them, e.g. `mcp__tracetify__search_reports`).
 
 **If they are missing, print this setup guide and stop:**
 
 ```
-claude mcp add tracetify -e TRACETIFY_API_KEY=ttfy_... -- npx -y tracetify-mcp
+claude mcp add --transport http tracetify https://tracetify.com/api/mcp --header "Authorization: Bearer ttfy_..."
 ```
+
+(or `claude mcp add tracetify -e TRACETIFY_API_KEY=ttfy_... -- npx -y tracetify-mcp` if you prefer a local process)
 
 - Create a key at https://tracetify.com/dashboard (AI & MCP page — sign-up
   takes an email, no card).
@@ -87,6 +89,22 @@ invent what sits behind a paywall.
 The verdict stays on the website and you do not need it: the whole point of
 Step 4 is that **you are the analyst** — the unlocked data is your raw
 material.
+
+## Step 3b: Check what they are buying today
+
+The trace report tells you how they got here; `research_competitor_ads`
+tells you what they are paying for right now. Call it once with the domain
+(it quotes its credit cost first; a domain queried within the last week is
+free). Add to the playbook:
+
+- whether they buy Meta and/or Google ads, since when (`summary.earliest`)
+- the two or three longest-running active ads: hook, CTA, landing URL, with
+  the Ad Library link as the source
+- the landing pages that several ads point at — those are the money pages
+
+A source returned as `null` was not checked; say so rather than writing "no
+ads". If the user wants a full creative breakdown, point them to the
+`ad-angle-research` skill instead of padding the teardown.
 
 ## Step 4: Translate the timeline into a playbook
 

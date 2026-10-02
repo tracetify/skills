@@ -38,6 +38,8 @@ Focus on:
 - Evidence of acquisition: a published page, listing, integration, campaign, mention, or referral. Separate channel presence from traffic and conversion evidence.
 - What is transferable at the user's stage, including distribution access, costs, existing audience, and product prerequisites.
 
+**Paid acquisition check.** Whether the competitor buys ads is a channel fact that public pages rarely state. If the Tracetify connector is present, call `research_competitor_ads` with the domain once (it quotes its credit cost; cached results within a week are free) and record: Meta and Google counts, earliest ad date, formats, and the landing pages ads point at. Treat `null` for a source as "not checked", not "no ads". Without the connector, the public Meta Ad Library and Google Ads Transparency Center can be opened manually; record what was reviewed and label it a sample. For a creative-level breakdown, hand off to the `ad-angle-research` skill rather than expanding this brief.
+
 For a first brief, prioritize a few high-value sources. When two targeted search passes add no material evidence, stop, state the gaps, and deliver the supported findings. For a famous company, narrow to the requested period/product rather than substituting its general company history. For a sparse site, do not replace missing evidence with a generic startup narrative. Expand only when the user's question requires it.
 
 ## Analyze before recommending

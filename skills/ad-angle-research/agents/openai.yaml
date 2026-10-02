@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ad Angle Research"
+  short_description: "Pull a competitor's live Meta and Google ads and extract testable angles."
+  default_prompt: "Use $ad-angle-research on this competitor and give me the hooks, offers and landing pages worth testing."

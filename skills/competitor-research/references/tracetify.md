@@ -12,6 +12,7 @@ The skill itself needs no Tracetify account. The current Tracetify MCP requires 
 | Search competitors or traffic footprint | `research_competitors`, `research_domain_overview` | Estimates; identify market, period and provider limitations |
 | Keyword demand or backlinks | `research_keyword_volume`, `research_backlinks` | Paid live data unless cached; no automatic spending |
 | Live ads on Meta and Google | `research_competitor_ads` | Paid unless cached within a week; each source reports `null` (unchecked) separately from `[]` (none running) |
+| Who holds the top 10 for a keyword | `research_serp_breakdown` | Paid unless cached; per position: domain, homepage vs inner page, domain rating, estimated traffic. Domain age is not included |
 
 Prefer a relevant existing report before a fresh trace. Cite underlying sources where exposed, and identify report snapshot age. A stored report is not automatically current. Preserve locked boundaries; do not seek hidden fields or bypass access controls.
 
